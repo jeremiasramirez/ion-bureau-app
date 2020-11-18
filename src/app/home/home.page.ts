@@ -10,7 +10,24 @@ import { ConfigService } from '../services/config.service';
   ]
 })
 export class HomePage {
+  private resultUser={ok:false};
+  private isLoader:boolean =false
+
+  private inputId:{identification:number}={
+    identification:null
+  }
 
   constructor(private service:ConfigService) {}
 
+  private getInfo() :void{
+    this.isLoader=true
+    this.service.getUserByDocumentNumber(this.inputId.identification).
+      subscribe((resp)=>{
+        
+        
+        this.resultUser=resp
+        console.log(this.resultUser)
+
+      }, ()=>{return}, ()=>this.isLoader=false)
+  }
 }

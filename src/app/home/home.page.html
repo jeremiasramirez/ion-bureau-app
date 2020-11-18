@@ -2,6 +2,38 @@
             headerImageUrl="../../assets/icon/header-img/user.png"
             options="true"></app-header>
 
+
 <ion-content [fullscreen]="true">
- 
+    <ion-progress-bar *ngIf="isLoader==true" type="indeterminate"></ion-progress-bar>
+
+    <app-user *ngIf="resultUser.ok != false" [data]="resultUser"></app-user>
+
+    <app-skeleton-user *ngIf="resultUser.ok == false" url="../../assets/skeletonuser.png"></app-skeleton-user>
+
+
+    <!-- input -->
+     <ion-list *ngIf="resultUser.ok == false">
+         <ion-item>
+            <ion-icon slot="start" name="keypad-outline"></ion-icon>
+             <ion-input type="number" [(ngModel)]="inputId.identification" placeholder="Introduzca su cédula "></ion-input>
+         </ion-item>
+     </ion-list>
+
+
+     <!-- buttons -->
+     <section class="container__buttons">
+        <article>
+
+            <ion-button *ngIf="resultUser.ok == false" (click)="getInfo()" expand="block" mode="ios" color="tertiary">Buscar
+                <ion-ripple-effect></ion-ripple-effect>
+            </ion-button>
+            
+            <ion-button *ngIf="resultUser.ok != false" (click)="resultUser.ok = false" expand="block" mode="ios" color="light">Ingresar otra
+                <ion-ripple-effect></ion-ripple-effect>
+            </ion-button>
+
+        </article>
+     </section>
+
+
 </ion-content>

@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { ConfigService } from '../services/config.service';
+import { SkeletonUserComponent } from './skeleton-user/skeleton-user.component';
+import { UserComponent } from './user/user.component';
  
 
 @NgModule({
@@ -9,11 +11,16 @@ import { ConfigService } from '../services/config.service';
     CommonModule
   ],
   declarations: [
-   HeaderComponent 
+   HeaderComponent,
+   SkeletonUserComponent,
+   UserComponent
+
   ],
   exports:[
     HeaderComponent,
-    ConfigService 
+    ConfigService,
+    SkeletonUserComponent,
+    UserComponent
   ],
   providers:[
     ConfigService

@@ -1,0 +1,13 @@
+.container__avatar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    height: 200px;
+}
+
+.container__avatar ion-img{
+    width: 100px !important;
+    border-radius: 4px !important
+}
