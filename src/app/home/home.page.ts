@@ -21,7 +21,7 @@ export class HomePage {
 
   private getInfo() :void{
     this.isLoader=true
-    this.service.getUserByDocumentNumber(this.inputId.identification).
+    this.service.getUser(this.inputId.identification).
       subscribe((resp)=>{
         
         

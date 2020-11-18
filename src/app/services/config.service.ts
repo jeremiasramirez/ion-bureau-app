@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, timer } from 'rxjs';
 import {ajax} from 'rxjs/ajax'
-import {pluck} from 'rxjs/operators'
+import {delay, pluck} from 'rxjs/operators'
 
 @Injectable()
 export class ConfigService {
@@ -11,11 +11,11 @@ export class ConfigService {
     console.log("run service!!!")
   }
 
-  getUserByDocumentNumber(id:number):Observable<any>{
-    return ajax.get(`https://api.adamix.net/apec/cedula/${id}`).pipe(pluck('response'))
+  getUser(id:number):Observable<any>{
+    return ajax.get(`https://api.adamix.net/apec/cedula/${id}`).pipe(delay(200),pluck('response'))
   }
 
    public to(route:string):void{
-    this.router.navigate([route])
+    timer(300).subscribe(()=>this.router.navigate([route]));
   }
 }
