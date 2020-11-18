@@ -15,7 +15,7 @@
      <ion-list *ngIf="resultUser.ok == false">
          <ion-item class="animate">
             <ion-icon slot="start" name="keypad-outline"></ion-icon>
-             <ion-input type="number" [(ngModel)]="inputId.identification" placeholder="Introduzca su cédula "></ion-input>
+             <ion-input type="text" [(ngModel)]="inputId.identification" placeholder="Introduzca su cédula "></ion-input>
          </ion-item>
      </ion-list>
 
@@ -24,7 +24,7 @@
      <section class="container__buttons animate">
         <article>
 
-            <ion-button *ngIf="resultUser.ok == false" (click)="getInfo()" expand="block" mode="ios" color="tertiary">Buscar
+            <ion-button [disabled]="inputId.identification.length<9" *ngIf="resultUser.ok == false" (click)="getInfo()" expand="block" mode="ios" color="tertiary">Buscar
                 <ion-ripple-effect></ion-ripple-effect>
             </ion-button>
             

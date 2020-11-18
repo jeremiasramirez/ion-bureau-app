@@ -13,13 +13,11 @@ export class HomePage {
   private resultUser={ok:false};
   private isLoader:boolean =false
 
-  private inputId:{identification:number}={
-    identification:null
+  private inputId:{identification:string}={
+    identification:''
   }
  
-  constructor(private service:ConfigService) {
-  
-  }
+  constructor(private service:ConfigService) { }
 
   private getInfo() :void{
        

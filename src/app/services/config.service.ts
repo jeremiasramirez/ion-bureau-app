@@ -11,7 +11,7 @@ export class ConfigService {
     console.log("run service!!!")
   }
 
-  getUser(id:number):Observable<any>{
+  getUser(id:string):Observable<any>{
     return ajax.get(`https://api.adamix.net/apec/cedula/${id}`).pipe(delay(200),pluck('response'))
   }
 

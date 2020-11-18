@@ -2,7 +2,7 @@
 <section class="container__avatar animate">
   
     <ion-img [src]="data.foto"></ion-img>
-     <h1> {{ "Jeremias ramirez" }} </h1>
+     <h1> {{ data.Nombres }} </h1>
  
  
 </section>
@@ -24,10 +24,62 @@
     <ion-note> {{ data.FechaNacimiento | date }}  </ion-note> 
   </ion-item>
 
-  <!-- <ion-item> 
-    <ion-label> Fecha Nac </ion-label>
-    <ion-note> {{ data.FechaNacimiento | date }}  </ion-note> 
-  </ion-item> -->
+  <ion-item> 
+    <ion-label> Sexo </ion-label>
+    <ion-note> {{ data.IdSexo == "M" ? "Masculino" : "Femenino"  }}  </ion-note> 
+  </ion-item>
+
+  <ion-item> 
+    <ion-label>Estado Civil</ion-label>
+    <ion-note> {{ data.IdEstadoCivil == "S" ? "Soltero/a": "Casado/a" }}</ion-note> 
+  </ion-item>
+
+  <ion-item> 
+    <ion-label> Cédula</ion-label>
+    <ion-note> {{ data.Cedula }}  </ion-note> 
+  </ion-item>
+
+  <ion-item> 
+    <ion-label>Cédula anterior</ion-label>
+    <ion-note> {{ data.CedulaAnterior == null ? "Ninguna" : data.CedulaAnterior }}  </ion-note> 
+  </ion-item>
+
+
+  <ion-item> 
+    <ion-label>Nació en</ion-label>
+    <ion-note> {{ data.LugarNacimiento }} </ion-note> 
+  </ion-item>
+
+  <ion-item> 
+    <ion-label>Causa Cancelación</ion-label>
+    <ion-note> {{ data.IDCausaCancelacion == null ? "Ninguna" :data.IDCausaCancelacion}} </ion-note> 
+  </ion-item>
+  
+
+  <ion-list-header>
+    <strong>Partidos políticos</strong>
+  </ion-list-header>
+
+
+  <ion-item> 
+    <ion-label>PLD</ion-label>
+    <ion-note> {{ !data.PLD == 1 ? "No incluido" : "Incluido/a"}} </ion-note> 
+  </ion-item>
+
+  <ion-item> 
+    <ion-label>PRM</ion-label>
+    <ion-note> {{ !data.PRM ==1 ? "No incluido" : "Incluido/a"}} </ion-note> 
+  </ion-item>
+
+  <ion-item> 
+    <ion-label>PRD</ion-label>
+    <ion-note> {{ !data.PRD== 1 ? "No incluido" : "Incluido/a"}} </ion-note> 
+  </ion-item>
+
+  <ion-item> 
+    <ion-label>PRSC</ion-label>
+    <ion-note> {{ !data.PRSC ==1 ? "No incluido" : "Incluido/a"}} </ion-note> 
+  </ion-item>
 
 </ion-list>
 
