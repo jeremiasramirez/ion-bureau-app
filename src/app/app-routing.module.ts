@@ -8,8 +8,7 @@ const routes: Routes = [
   },
   {
     path: 'home/history',
-    loadChildren: () => import('./pages/history/history.module').then( m => m.HistoryPageModule)
-  },
+    loadChildren: () => import('./pages/history/history.module').then( m => m.HistoryPageModule)},
   {
     path: '',
     redirectTo: 'home',
