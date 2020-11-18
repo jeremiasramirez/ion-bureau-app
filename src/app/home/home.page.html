@@ -4,7 +4,7 @@
 
 
 <ion-content [fullscreen]="true">
-    <ion-progress-bar *ngIf="isLoader==true" type="indeterminate"></ion-progress-bar>
+    <ion-progress-bar class="animate" *ngIf="isLoader==true" type="indeterminate"></ion-progress-bar>
 
     <app-user *ngIf="resultUser.ok != false" [data]="resultUser"></app-user>
 
@@ -13,7 +13,7 @@
 
     <!-- input -->
      <ion-list *ngIf="resultUser.ok == false">
-         <ion-item>
+         <ion-item class="animate">
             <ion-icon slot="start" name="keypad-outline"></ion-icon>
              <ion-input type="number" [(ngModel)]="inputId.identification" placeholder="Introduzca su cédula "></ion-input>
          </ion-item>
@@ -21,14 +21,14 @@
 
 
      <!-- buttons -->
-     <section class="container__buttons">
+     <section class="container__buttons animate">
         <article>
 
             <ion-button *ngIf="resultUser.ok == false" (click)="getInfo()" expand="block" mode="ios" color="tertiary">Buscar
                 <ion-ripple-effect></ion-ripple-effect>
             </ion-button>
             
-            <ion-button *ngIf="resultUser.ok != false" (click)="resultUser.ok = false" expand="block" mode="ios" color="light">Ingresar otra
+            <ion-button *ngIf="resultUser.ok != false" (click)="resultUser.ok = false" expand="block" mode="ios" color="light">Atrás
                 <ion-ripple-effect></ion-ripple-effect>
             </ion-button>
 

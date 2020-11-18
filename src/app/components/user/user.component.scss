@@ -5,10 +5,23 @@
     align-items: center;
     padding-top: 15px;
     padding-bottom: 10px;
-    height: 200px;
+   
+    flex-direction: column;
 }
-
+.container__avatar h1{
+    font-family: sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    margin-top: 14px;
+    margin-bottom: 5px;
+}
 .container__avatar ion-img{
+    height: 190px !important;
     width: 100px !important;
     border-radius: 4px !important
+}
+
+ion-note{
+    font-size: 14px !important;
+    margin-top: 14px !important
 }

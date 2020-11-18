@@ -1,4 +1,42 @@
 
-<section class="container__avatar">
-  <ion-img [src]="data.foto"></ion-img>
+<section class="container__avatar animate">
+  
+    <ion-img [src]="data.foto"></ion-img>
+     <h1> {{ "Jeremias ramirez" }} </h1>
+ 
+ 
 </section>
+
+<ion-list class="animate">
+
+  <ion-item> 
+    <ion-label> Nombre </ion-label>
+    <ion-note> {{ data.Nombres }} </ion-note> 
+  </ion-item>
+
+  <ion-item> 
+    <ion-label> Apellido </ion-label>
+    <ion-note> {{ data.Apellido1 }} {{ data.Apellido2 }} </ion-note> 
+  </ion-item>
+
+  <ion-item> 
+    <ion-label> Fecha Nac </ion-label>
+    <ion-note> {{ data.FechaNacimiento | date }}  </ion-note> 
+  </ion-item>
+
+  <!-- <ion-item> 
+    <ion-label> Fecha Nac </ion-label>
+    <ion-note> {{ data.FechaNacimiento | date }}  </ion-note> 
+  </ion-item> -->
+
+</ion-list>
+
+
+
+
+
+
+
+
+
+
