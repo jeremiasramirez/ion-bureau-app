@@ -4,6 +4,8 @@ import { HeaderComponent } from './header/header.component';
 import { ConfigService } from '../services/config.service';
 import { SkeletonUserComponent } from './skeleton-user/skeleton-user.component';
 import { UserComponent } from './user/user.component';
+import { SkeletonHistoryComponent } from './skeleton-history/skeleton-history.component';
+import { HistoryItemsComponent } from './history-items/history-items.component';
  
 
 @NgModule({
@@ -13,14 +15,17 @@ import { UserComponent } from './user/user.component';
   declarations: [
    HeaderComponent,
    SkeletonUserComponent,
-   UserComponent
-
+   UserComponent,
+   SkeletonHistoryComponent,
+   HistoryItemsComponent
   ],
   exports:[
     HeaderComponent,
     ConfigService,
     SkeletonUserComponent,
-    UserComponent
+    UserComponent,
+    SkeletonHistoryComponent,
+    HistoryItemsComponent
   ],
   providers:[
     ConfigService
