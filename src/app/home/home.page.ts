@@ -31,6 +31,9 @@ export class HomePage {
           this.resultUser=resp
           console.log(this.resultUser)
 
+          // setter to storage 
+          if(resp) this.service.setToStorage(resp)
+
         }, ()=>{return}, ()=>this.isLoader=false)
     }
  

@@ -7,15 +7,27 @@ import {delay, pluck} from 'rxjs/operators'
 @Injectable()
 export class ConfigService {
   private uriAPI:string;
-  constructor(private router:Router) {
-    console.log("run service!!!")
+  public history:any[] = JSON.parse(localStorage.getItem("history"))
+  constructor(private router:Router){}
+
+  public getUser(id:string):Observable<any>{
+    let url:string="https://api.adamix.net/apec/cedula"
+    return ajax.get(`${url}/${id}`).pipe(delay(200),pluck('response'))
   }
 
-  getUser(id:string):Observable<any>{
-    return ajax.get(`https://api.adamix.net/apec/cedula/${id}`).pipe(delay(200),pluck('response'))
-  }
-
-   public to(route:string):void{
+  public to(route:string):void{
     timer(300).subscribe(()=>this.router.navigate([route]));
   }
+
+  public setToStorage(item:{}) :void{
+    this.history.unshift(item)
+    localStorage.setItem("history", JSON.stringify(this.history) )
+  }
+
+  public getAllStorageHistory() : any[]{
+    let elementStorage = JSON.parse(localStorage.getItem("history"))
+    return elementStorage
+  }
+
+
 }
