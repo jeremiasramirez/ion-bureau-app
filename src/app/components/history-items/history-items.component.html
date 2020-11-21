@@ -1,3 +1,5 @@
-<p>
-  history-items works!
-</p>
+<ion-list>
+  <ion-item *ngFor="let history of listItems" >
+    <ion-label> {{ history.Nombres }} </ion-label>
+  </ion-item>
+</ion-list>

@@ -32,7 +32,7 @@ export class HomePage {
           console.log(this.resultUser)
 
           // setter to storage 
-          if(resp) this.service.setToStorage(resp)
+          if(resp.Nombres) this.service.setToStorage(resp)
 
         }, ()=>{return}, ()=>this.isLoader=false)
     }
