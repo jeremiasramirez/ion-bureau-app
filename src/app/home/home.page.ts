@@ -10,31 +10,32 @@ import { ConfigService } from '../services/config.service';
   ]
 })
 export class HomePage {
+
   private resultUser={ok:false};
   private isLoader:boolean =false
 
-  private inputId:{identification:string}={
+  private inputId:{ identification:string }={
     identification:''
   }
  
   constructor(private service:ConfigService) { }
 
   private getInfo() :void{
-       
-      // loading spinner
-      this.isLoader=true
+    // loading spinner
+    this.isLoader=true
 
-      this.service.getUser(this.inputId.identification).
-        subscribe((resp)=>{
+    this.service.getUser(this.inputId.identification)  
+    .subscribe((resp)=>{
           
-          
-          this.resultUser=resp
-          console.log(this.resultUser)
+      this.resultUser=resp
 
-          // setter to storage 
-          if(resp.Nombres) this.service.setToStorage(resp)
+      // setter to storage 
+      if(resp.Nombres) this.service.setToStorage(resp);
 
-        }, ()=>{return}, ()=>this.isLoader=false)
+      }, 
+      ()=>{return},
+      ()=>this.isLoader=false)
+
     }
  
 }

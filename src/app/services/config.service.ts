@@ -6,8 +6,10 @@ import {delay, pluck} from 'rxjs/operators'
 
 @Injectable()
 export class ConfigService {
+  
   private uriAPI:string;
-  public history:any[] = []
+  public history:any[] = [];
+
   constructor(private router:Router){
     if(JSON.parse(localStorage.getItem("history"))){
       this.history =JSON.parse(localStorage.getItem("history"))
@@ -25,7 +27,6 @@ export class ConfigService {
 
   public setToStorage(item:{}) :void{
     this.history.unshift(item)
-    
     localStorage.setItem("history", JSON.stringify(this.history) )
   }
 

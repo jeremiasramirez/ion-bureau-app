@@ -1,12 +1,19 @@
 <ion-header mode="ios" class="ion-no-border" [translucent]="true" >
-  <ion-toolbar mode="ios" >
+  <ion-toolbar [color]="color" mode="ios" >
     <ion-title> {{ headerTitle }} </ion-title>
   
     <ion-buttons  slot="start" *ngIf="back" mode="md"> 
-        <ion-button class="animate" (click)="toHome()">
-          <ion-icon slot="icon-only" name="chevron-back-outline"></ion-icon>
-        </ion-button>
+      <ion-button class="animate" (click)="toHome()">
+        <ion-icon slot="icon-only" name="chevron-back-outline"></ion-icon>
+      </ion-button>
+       
     </ion-buttons>
+
+    <ion-buttons  slot="start" *ngIf="backClose" mode="md"> 
+      <ion-button class="animate" (click)="closeModal()">
+        <ion-icon slot="icon-only" name="chevron-back-outline"></ion-icon>
+      </ion-button>
+  </ion-buttons>
 
     <ion-buttons slot="start" *ngIf="headerImageUrl.length>1"> 
       <ion-img class="animate" [src]="headerImageUrl"></ion-img>
