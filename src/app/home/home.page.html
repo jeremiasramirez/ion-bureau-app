@@ -4,7 +4,6 @@
 
 
 <ion-content [fullscreen]="true">
-    <ion-progress-bar class="animate" *ngIf="isLoader==true" type="indeterminate"></ion-progress-bar>
 
     <app-user *ngIf="resultUser.ok != false" [data]="resultUser"></app-user>
 
@@ -35,5 +34,8 @@
         </article>
      </section>
 
-
+       
+    <section *ngIf="isLoader==true" class="container__spinner animate">
+        <ion-spinner color="danger" name="lines"></ion-spinner>
+    </section>
 </ion-content>

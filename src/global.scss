@@ -28,8 +28,8 @@
 
 
 .animate{
-    transition: .8s;
-    animation: animateIn .6s linear;
+    transition: 1s;
+    animation: animateIn .8s linear;
 }
 @keyframes animateIn{
     from {
