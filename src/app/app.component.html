@@ -1,3 +1,20 @@
-<ion-app>
-  <ion-router-outlet></ion-router-outlet>
+<ion-menu mode="ios" contentId="menu" menuId="menu" side="end">
+  <ion-header>
+    <ion-toolbar mode="ios">
+      <ion-title>History</ion-title>
+      <ion-buttons  mode="md" slot="end">
+        <ion-button>
+          <ion-icon name="trash" color="danger"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-searchbar showCancelButton="never"></ion-searchbar>
+  <ion-content>
+    <app-history-items></app-history-items>
+  </ion-content>
+</ion-menu>
+
+<ion-app >
+  <ion-router-outlet id="menu"></ion-router-outlet>
 </ion-app>

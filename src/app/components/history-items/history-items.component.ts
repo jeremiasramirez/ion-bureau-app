@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { MenuController, ModalController } from '@ionic/angular';
 import { ConfigService } from 'src/app/services/config.service';
 import { UsermodalComponent } from '../usermodal/usermodal.component';
 
@@ -15,6 +15,7 @@ export class HistoryItemsComponent implements OnInit {
   private listItems :any[] = []
 
   constructor(
+    private menu:MenuController,
     private modalUser:ModalController,
     private historyItems:ConfigService) { }
 
@@ -25,10 +26,14 @@ export class HistoryItemsComponent implements OnInit {
     this.listItems=[]
   }
   private getItems():void{
+    
     this.listItems = this.historyItems.getAllStorageHistory()
+   
   }
 
   private async getItem(history:{}):Promise<any>{
+    this.menu.close("menu");
+    
     const modal = await this.modalUser.create({
       component: UsermodalComponent,
       componentProps: {data:history}
