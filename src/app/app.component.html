@@ -2,16 +2,24 @@
   <ion-header>
     <ion-toolbar mode="ios">
       <ion-title>History</ion-title>
+      
+      <ion-buttons  mode="md" slot="start">
+        <ion-spinner color="medium" *ngIf="existWriting"></ion-spinner>
+      </ion-buttons>
+
       <ion-buttons  mode="md" slot="end">
-        <ion-button>
+      
+        <ion-button (click)="deleteHistory()">
           <ion-icon name="trash" color="danger"></ion-icon>
         </ion-button>
+
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
-  <ion-searchbar showCancelButton="never"></ion-searchbar>
+
+  <ion-searchbar [value]="valueForSearchBar" id="searchbar" (ionChange)="getValueBySearch()" animated ></ion-searchbar>
   <ion-content>
-    <app-history-items></app-history-items>
+    <app-history-items [inputValue]="valueForSearchBar"></app-history-items>
   </ion-content>
 </ion-menu>
 

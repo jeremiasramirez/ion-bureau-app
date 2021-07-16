@@ -7,6 +7,7 @@ import { UserComponent } from './user/user.component';
 import { SkeletonHistoryComponent } from './skeleton-history/skeleton-history.component';
 import { HistoryItemsComponent } from './history-items/history-items.component';
 import { UsermodalComponent } from './usermodal/usermodal.component';
+import { SearchPipe } from '../pipes/search.pipe';
  
 
 @NgModule({
@@ -19,7 +20,8 @@ import { UsermodalComponent } from './usermodal/usermodal.component';
    UserComponent,
    SkeletonHistoryComponent,
    HistoryItemsComponent,
-   UsermodalComponent
+   UsermodalComponent,
+   SearchPipe
   ],
   exports:[
     HeaderComponent,
@@ -28,7 +30,8 @@ import { UsermodalComponent } from './usermodal/usermodal.component';
     UserComponent,
     SkeletonHistoryComponent,
     HistoryItemsComponent,
-    UsermodalComponent
+    UsermodalComponent,
+    SearchPipe
   ],
   providers:[
     ConfigService

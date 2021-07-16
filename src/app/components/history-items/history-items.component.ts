@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MenuController, ModalController } from '@ionic/angular';
 import { ConfigService } from 'src/app/services/config.service';
 import { UsermodalComponent } from '../usermodal/usermodal.component';
@@ -13,7 +13,8 @@ import { UsermodalComponent } from '../usermodal/usermodal.component';
 })
 export class HistoryItemsComponent implements OnInit {
   private listItems :any[] = []
-
+  @Input() inputValue:string; 
+  public dataForSearchbar : string = "mi data";
   constructor(
     private menu:MenuController,
     private modalUser:ModalController,
@@ -21,6 +22,7 @@ export class HistoryItemsComponent implements OnInit {
 
   ngOnInit() {
     this.getItems();
+   
   }
   ngOnDestroy(){
     this.listItems=[]
