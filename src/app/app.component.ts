@@ -4,6 +4,8 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { timer } from 'rxjs';
+import { WebElement } from 'protractor';
+import { HtmlTagDefinition } from '@angular/compiler';
 
 @Component({
   selector: 'app-root',
@@ -36,13 +38,16 @@ export class AppComponent {
     this.valueForSearchBar = "";
   }
 
-  
+
   getValueBySearch():void {
 
     this.activeSpinner();
 
+    // if(document.getElementById("searchbar")){
+    //   console.log(document.getElementById("searchbar").getElementsByClassName("searchbar-input")[0].textContent)
+    // }
     
-    let valueSearchbar:HTMLInputElement = document.getElementById("searchbar").value
+    let valueSearchbar = document.getElementById("searchbar").value
     this.valueForSearchBar = valueSearchbar
  
   }

@@ -1,4 +1,5 @@
 <app-header headerTitle="Bureau" 
+            color="tertiary"
             headerImageUrl="../../assets/icon/header-img/user.png"
             options="true"></app-header>
 
@@ -11,33 +12,36 @@
 
 
     <!-- input -->
-     <ion-list *ngIf="resultUser.ok == false">
-         <ion-item class="animate">
-            <ion-icon slot="start" name="keypad-outline"></ion-icon>
-             <ion-input type="text" [(ngModel)]="inputId.identification" placeholder="Introduzca su cédula "></ion-input>
-         </ion-item>
-     </ion-list>
-
-
-     <!-- buttons -->
-     <section class="container__buttons animate">
-        <article>
-
-            <ion-button [disabled]="inputId.identification.length<9" *ngIf="resultUser.ok == false" (click)="getInfo()" expand="block" mode="ios" color="tertiary">
-                {{"Buscar "}}  
-                <ion-ripple-effect></ion-ripple-effect>
-                
-            </ion-button>
-            
-            <ion-button *ngIf="resultUser.ok != false" (click)="resultUser.ok = false" expand="block" mode="ios" color="medium">
-                <ion-icon name="chevron-back-outline"></ion-icon>
-                Atrás
-                <ion-ripple-effect></ion-ripple-effect>
-            </ion-button>
-
-        </article>
-     </section>
-
+    
+    <div class="responsiveMedia">
+        <ion-list *ngIf="resultUser.ok == false" class="media">
+            <ion-item class="animate">
+               <ion-icon slot="start" name="keypad-outline"></ion-icon>
+                <ion-input type="text" [(ngModel)]="inputId.identification" placeholder="Introduzca su cédula "></ion-input>
+            </ion-item>
+        </ion-list>
+   
+   
+        <!-- buttons -->
+        <section class="container__buttons media animate">
+           <article>
+   
+               <ion-button [disabled]="inputId.identification.length<9" *ngIf="resultUser.ok == false" (click)="getInfo()" expand="block" mode="ios" color="tertiary">
+                   {{"Buscar "}}  
+                   <ion-ripple-effect></ion-ripple-effect>
+                   
+               </ion-button>
+               
+               <ion-button *ngIf="resultUser.ok != false" (click)="resultUser.ok = false" expand="block" mode="ios" color="medium">
+                   <ion-icon name="chevron-back"></ion-icon>
+                   Atrás
+                   <ion-ripple-effect></ion-ripple-effect>
+               </ion-button>
+   
+           </article>
+        </section>
+   
+    </div>
        
     <section *ngIf="isLoader==true" class="container__spinner animate">
         <ion-spinner color="tertiary"></ion-spinner>

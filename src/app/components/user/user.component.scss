@@ -5,6 +5,7 @@
     align-items: center;
     padding-top: 15px;
     padding-bottom: 10px;
+    margin: 10px;
    
     flex-direction: column;
 }
@@ -18,10 +19,34 @@
 .container__avatar ion-img{
     height: 190px !important;
     width: 150px !important;
-    border-radius: 4px !important
+    border-radius: 10px !important
 }
 
 ion-note{
     font-size: 14px !important;
     margin-top: 14px !important
+}
+
+.responsiveInfo{
+    
+    // padding: 5px;
+   
+    // display:flex;
+    // justify-content: flex-end;
+    // flex-direction: column;
+  
+    
+     
+} 
+
+
+@media screen and (min-width: 600px){
+    .responsiveInfo{
+        display:flex;
+        justify-content: center;
+        align-items: flex-start;
+        
+       
+         
+    }
 }

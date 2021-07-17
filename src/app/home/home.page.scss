@@ -1,8 +1,25 @@
 .container__buttons{
   margin: 10px 0;
+ 
 }
 .container__spinner{
   text-align:center;
   padding:5px;
   height:20px !important;
+}
+
+.responsiveMedia{
+  display:flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+@media screen and (min-width: 500px){
+  .media{
+    width: 350px !important;
+  }
+    
+ 
 }
