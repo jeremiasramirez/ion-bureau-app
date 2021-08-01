@@ -1,13 +1,14 @@
 .itemHistory{
     animation: itemHistoryAnimate .4s linear;
-    transition:.5s;
+    transition: .8s;
 }
 @keyframes itemHistoryAnimate{
     from{
         opacity: 0;
+        transform: translateX(50px)
     }
     to{
-         
+        transform: translateX(10px);
         opacity: 1;
     }
 }
