@@ -1,10 +1,14 @@
 
 <ion-list>
  
-  <ion-item  *ngFor="let history of listItems | search:inputValue" (click)="getItem(history)" detail>
+  <ion-item  *ngFor="let history of listItems | search:inputValue | slice:0:endItem" (click)="getItem(history)" detail>
     <ion-icon class="itemHistory" color="danger" name="person-circle-outline" slot="start"></ion-icon>
     <ion-label class="itemHistory"> {{ history.Nombres }} </ion-label>
   </ion-item>
   
 </ion-list>
- 
+
+<ion-infinite-scroll threshold="100px" (ionInfinite)="getForInfiniteScroll($event)">
+  <ion-infinite-scroll-content  >
+  </ion-infinite-scroll-content>
+</ion-infinite-scroll>

@@ -5,10 +5,12 @@
 @keyframes itemHistoryAnimate{
     from{
         opacity: 0;
+        transition: .8s;
         transform: translateX(50px)
     }
     to{
         transform: translateX(10px);
+        transition: .8s;
         opacity: 1;
     }
 }

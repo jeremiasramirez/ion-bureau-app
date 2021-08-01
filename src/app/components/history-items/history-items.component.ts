@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MenuController, ModalController } from '@ionic/angular';
+import { timer } from 'rxjs';
 import { ConfigService } from 'src/app/services/config.service';
 import { UsermodalComponent } from '../usermodal/usermodal.component';
 
@@ -13,6 +14,8 @@ import { UsermodalComponent } from '../usermodal/usermodal.component';
 })
 export class HistoryItemsComponent implements OnInit {
   private listItems :any[] = []
+  public startItem: number = 0;
+  public endItem: number = 20;
   @Input() inputValue:string; 
   public dataForSearchbar : string = "mi data";
   constructor(
@@ -42,5 +45,22 @@ export class HistoryItemsComponent implements OnInit {
     })
     modal.present();
   }
+
+
+  getForInfiniteScroll(event) : void{
+
+    timer(800).subscribe(()=>{
+      
+      if(this.listItems.length) this.endItem+=10 
+      event.target.disabled=true;
+
+    });
+
+
+
+  }
+
+
+
 
 }
