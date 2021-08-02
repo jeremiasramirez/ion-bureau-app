@@ -13,6 +13,8 @@ import { UsermodalComponent } from '../usermodal/usermodal.component';
   ]
 })
 export class HistoryItemsComponent implements OnInit {
+
+  public cleared: boolean = false;
   private listItems :any[] = []
   public startItem: number = 0;
   public endItem: number = 20;
@@ -25,8 +27,9 @@ export class HistoryItemsComponent implements OnInit {
 
   ngOnInit() {
     this.getItems();
-   
+    
   }
+  
   ngOnDestroy(){
     this.listItems=[]
   }

@@ -3,19 +3,21 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { timer } from 'rxjs';
-
+import { timer } from 'rxjs'; 
+ 
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
-  styleUrls: ['app.component.scss']
+  styleUrls: ['app.component.scss'] 
 })
 export class AppComponent {
+ 
   public valueForSearchBar :any = "";
   public existWriting:boolean=false;
 
   constructor(
+    
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar
@@ -23,7 +25,7 @@ export class AppComponent {
     this.initializeApp();
     this.statusBar.show();
   }
-
+  
   activeSpinner():void{
     
     this.existWriting = true
@@ -33,11 +35,7 @@ export class AppComponent {
 
 
   }
-  deleteHistory():void{
-    this.valueForSearchBar = "";
-  }
-
-
+ 
   getValueBySearch():void {
 
     this.activeSpinner();
@@ -46,6 +44,8 @@ export class AppComponent {
     this.valueForSearchBar = valueSearchbar
  
   }
+
+ 
    
   initializeApp() {
     this.platform.ready().then(() => {

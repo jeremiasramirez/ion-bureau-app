@@ -5,19 +5,13 @@
       
       <!-- loading while write -->
       <ion-buttons  mode="md" slot="start">
-        <ion-spinner class="animate" color="medium" *ngIf="existWriting"></ion-spinner>
+        <ion-spinner class="animate" color="light" *ngIf="existWriting"></ion-spinner>
       </ion-buttons>
 
-      <!-- button delete -->
-      <ion-buttons  mode="md" slot="end">
-      
-        <ion-button (click)="deleteHistory()">
-          <ion-icon class="animate" name="trash" color="light"></ion-icon>
-        </ion-button>
-
-      </ion-buttons>
+ 
     </ion-toolbar>
 
+    <!-- toolbar searchbar -->
     <ion-toolbar color="primary" class="toolbar__searchbar">
       <br>
       <ion-searchbar class="animate" color="light" [value]="valueForSearchBar" id="searchbar" (ionChange)="getValueBySearch()" animated ></ion-searchbar>
@@ -28,7 +22,7 @@
 
  
   <ion-content>
-    <app-history-items [inputValue]="valueForSearchBar"></app-history-items>
+    <app-history-items   [inputValue]="valueForSearchBar"></app-history-items>
   </ion-content>
 </ion-menu>
 

@@ -9,17 +9,18 @@ export class SearchPipe implements PipeTransform{
     
     transform(arr,data:any){
       
-        return arr.filter((resp)=>{
+        if(arr)
+            return arr.filter((resp)=>{
+                
+                if (arr.length){
+                    return resp.Nombres.toLowerCase().includes(data.toLowerCase())
+                }
+                else{
+                    return resp
+                }
+                
             
-            if (arr.length){
-                return resp.Nombres.toLowerCase().includes(data.toLowerCase())
-            }
-            else{
-                return resp
-            }
-             
-        
-        })
+            })
 
     }
 }
