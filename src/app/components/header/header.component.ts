@@ -28,6 +28,7 @@ export class HeaderComponent implements OnInit {
 
   private async closeModal() :Promise<any>{
     this.closeM.dismiss()
+    this.menu.open("menu");
 
   }
   private toHome():void{
